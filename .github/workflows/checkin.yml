@@ -152,11 +152,3 @@ jobs:
       run: |
         echo "签到任务执行完成"
         echo "时间: $(Get-Date)"
-
-    - name: Upload logs artifact（总是上传）
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: debug-logs-${{ github.run_number }}
-        path: logs/               # 整个目录一起打包
-        retention-days: 1        # 想省配额就改 7 或 3
